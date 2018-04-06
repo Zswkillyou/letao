@@ -11,7 +11,82 @@
   <link rel="stylesheet" href="css/comment.css">
 </head>
 <body>
+<!--模态框-->
+<div class="modal fade" id="modal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p class="color-red"> <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary dele">退出</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
+<!--左边导航-->
+<div class="aside">
+  <div class="as_top">
+    <a href="#">黑马19期</a>
+  </div>
+    <!--头像-->
+  <div class="as_img">
+    <img src="images/mm.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  <!--菜单-->
+  <div class="as_nav">
+    <ul>
+      <li>
+        <a href="#" class="active">
+          <i class="glyphicon glyphicon-user icon-t"></i>
+          <span>用户管理</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-a">
+          <i class="glyphicon glyphicon-list icon-t"></i>
+          <span>分类管理</span>
+        </a>
+        <div class="child" style="display: none">
+          <a href="#">一级菜单</a>
+          <a href="#">二级菜单</a>
+        </div>
+      </li>
+      <li>
+        <a href="#">
+          <i class="glyphicon glyphicon-tags icon-t"></i>
+          <span>商品管理</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--右边-->
+<div class='main'>
+  <div class="title">
+    <a href="#" class="pull-left t-ment"><i class="glyphicon glyphicon-align-justify"></i></a>
+    <a href="#" class='pull-right t-info'><i class="glyphicon glyphicon-log-out"></i></a>
+  </div>
+
+  <div class="main-comtent">
+  <div class="container-fluid">
+    <div class="ment">
+      <ol class="breadcrumb">
+        <li><a href="#">管理系统</a></li>
+        <li class="active">首页</li>
+      </ol>
+    </div>
+  </div>
+  </div>
+</div>
 
 
 <!--引入jquery-->
