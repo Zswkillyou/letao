@@ -1,0 +1,13 @@
+/*设置body的颜色*/ 
+body {
+  background-color: #223233;
+}
+
+.m_150 {
+  margin-top: 150px;
+}
+.fh_40 {
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+}
