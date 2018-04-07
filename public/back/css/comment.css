@@ -120,7 +120,7 @@ a:link, a:visited, a:hover, a:active {
   width: 100%;
   height: 1000px;
   padding-left: 180px;
-  background-color: deeppink;
+  /*background-color: deeppink;*/
   padding-top: 50px;
   transition: all 1s;
 }

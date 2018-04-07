@@ -43,11 +43,15 @@ $('.as_nav ul .child a').click(function(){
 
 //左边导航隐藏
 $('.t-ment').click(function(){
-  $('.aside').addClass('thide');
-  $('.main').addClass('thide');
-  $('.title').addClass('thide');
-  $('.title').addClass('phide');
+
+    $('.aside').toggleClass('thide');
+    $('.main').toggleClass('thide');
+    $('.title').toggleClass('thide');
+    $('.title').toggleClass('phide');
+
+
 })
+
 
 //退出显示模态框
 $('.t-info').click(function(){
@@ -68,3 +72,27 @@ $('.dele').click(function(){
   })
 })
 
+
+//设置的登录拦截
+//console.log(location.href);
+//console.log(location.href.indexOf('login.html'));
+
+//判断是否登录   //如果是登录页不用判断
+if(location.href.indexOf('login.html')== -1) {
+  $.ajax({
+    url:'/employee/checkRootLogin',
+    type:'get',
+    success:function(info) {
+      //console.log(info);
+      //如果是登录页不用判断
+      if(info.success) {
+        //登录了什么都不做
+      }
+      if(info.error==400) {
+        //没有登录跳转登录页
+        location.href="login.html";
+      }
+
+    }
+  })
+}

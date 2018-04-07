@@ -20,11 +20,11 @@
         <h4 class="modal-title">温馨提示</h4>
       </div>
       <div class="modal-body">
-        <p class="color-red"> <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？&hellip;</p>
+        <p class="color-red"> <i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？&hellip;</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary dele">退出</button>
+        <button type="button" class="btn btn-primary dele">确定</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -35,7 +35,7 @@
   <div class="as_top">
     <a href="#">黑马19期</a>
   </div>
-    <!--头像-->
+  <!--头像-->
   <div class="as_img">
     <img src="images/mm.jpg" alt="">
     <p>超级管理员</p>
@@ -77,25 +77,58 @@
   </div>
 
   <div class="main-comtent">
-  <div class="container-fluid">
-    <div class="ment">
-      <ol class="breadcrumb">
-        <li><a href="#">管理系统</a></li>
-        <li class="active">首页</li>
-      </ol>
+    <div class="container-fluid">
+      <div class="ment">
+        <ol class="breadcrumb">
+          <li><a href="index.html">管理系统</a></li>
+          <li class="active">首页</li>
+        </ol>
+      </div>
+      <!--表格-->
+      <div class="main_table">
+        <table class="table table-bordered table-hover">
+          <thead>
+              <th width="10%">序号</th>
+              <th width="30%">用户名</th>
+              <th width="30%">手机号</th>
+              <th width="20%">状态</th>
+              <th width="10%">操作</th>
+          </thead>
+          <tbody class="main-tbodt">
+          <!--坑-->
+          </tbody>
+        </table>
+      </div>
+      <!--分页容器-->
+      <div class="pull-right">
+        <ul id="page-ul">
+          <li></li>
+        </ul>
+      </div>
     </div>
-    <!--统计图形 -->
-    <div class="pull-left">
-      <div id="main" style="width: 500px;height:400px;"></div>
-    </div>
-    <div class="pull-right">
-      <div id="bing" style="width: 500px;height:400px;"></div>
-    </div>
-  </div>
 
   </div>
 </div>
 
+<!--表格模板-->
+<script type="text/template" id="main-tb">
+{{each rows v i}}
+<tr>
+  <td>{{(page-1)*size+(i+1)}}</td>
+  <td>{{v.username}}</td>
+  <td>{{v.mobile}}</td>
+  <td>{{v.isDelete === 1 ?"正常":"禁用"}}</td>
+  <td data-id={{v.id}}>
+    <!--p判断是禁用还是启用-->
+    {{ if v.isDelete === 1 }}
+    <button class="btn btn-danger ">禁用</button>
+    {{ else }}
+    <button class="btn btn-success">启用</button>
+    {{ /if }}
+  </td>
+</tr>
+{{/each}}
+</script>
 
 <!--引入jquery-->
 <script src="lib/jquery/jquery.min.js"></script>
@@ -103,9 +136,13 @@
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <!--引进度条插件-->
 <script src="lib/nprogress/nprogress.js"></script>
-<!--引入图形插件-->
-<script src="lib/echarts/echarts.min.js"></script>
+<!--引入数据模型-->
+<script src="lib/artTemplate/template-web.js"></script>
+<!--引入分页-->
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!--公共js-->
 <script src="js/comment.js"></script>
-<script src="js/index.js"></script>
+<!--user的js-->
+<script src="js/user.js"></script>
 </body>
 </html>
