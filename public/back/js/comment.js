@@ -18,27 +18,12 @@ $(document).ajaxStart(function(){
   })
 
 
-//左边导航点击切换边框
-$('.as_nav>ul> li >a ').click(function(){
-  $(this).addClass('active').parent().siblings().children('a').removeClass('active');
-  $('.child a').removeClass('active');
-})
+
 
 //展开二级导航
 $('.as_nav ul .nav-a').click(function(){
-  if($(this).next().css('display')=='none') {
-    $(this).next().stop().slideDown(500)
-  }else {
-    $(this).next().stop().slideUp(500)
-    $('.child a').removeClass('active');
-  }
+  $(this).next().stop().slideToggle();
 
-})
-
-//二级导航加边框
-$('.as_nav ul .child a').click(function(){
-  $(this).addClass('active').siblings().removeClass('active')
-  $('.as_nav>ul>li>a').removeClass('active');
 })
 
 //左边导航隐藏

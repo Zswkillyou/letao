@@ -20,6 +20,9 @@ a:link, a:visited, a:hover, a:active {
   line-height: 40px;
   font-size: 20px;
 }
+.mb_20 {
+  margin-bottom: 20px;
+}
 * {
   margin: 0;
   padding: 0;

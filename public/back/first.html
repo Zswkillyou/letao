@@ -2,9 +2,145 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>一级菜单</title>
+  <title>电商全端</title>
+  <!--引入boot的css-->
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+  <!--引进度条插件样式-->
+  <link rel="stylesheet" href="lib/nprogress/nprogress.css">
+  <!--效验样式、-->
+  <link rel="stylesheet" href="lib/bootstrap-validator/css/bootstrapValidator.min.css">
+  <!--引入自己的css-->
+  <link rel="stylesheet" href="css/comment.css">
 </head>
 <body>
+<!--模态框-->
+<div class="modal fade" id="modal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span class="sr-only">Close</span></button>
+        <h4 class="modal-title ">添加分类</h4>
+      </div>
+      <div class="modal-body">
+        <form id="form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类" name="categoryName">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>                                         <!-- form ="(form id)" -->
+        <button type="submit" class="btn btn-primary" form="form" >添加</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
+<!--左边导航-->
+<div class="aside">
+  <div class="as_top">
+    <a href="#">黑马19期</a>
+  </div>
+  <!--头像-->
+  <div class="as_img">
+    <img src="images/mm.jpg" alt="">
+    <p>超级管理员</p>
+  </div>
+  <!--菜单-->
+  <div class="as_nav">
+    <ul>
+      <li>
+        <a href="user.html" >
+          <i class="glyphicon glyphicon-user icon-t"></i>
+          <span>用户管理</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;" class="nav-a">
+          <i class="glyphicon glyphicon-list icon-t"></i>
+          <span>分类管理</span>
+        </a>
+        <div class="child" style="display: block">
+          <a href="first.html" class="active">一级分类</a>
+          <a href="second.html">二级分类</a>
+        </div>
+      </li>
+      <li>
+        <a href="product.html">
+          <i class="glyphicon glyphicon-tags icon-t"></i>
+          <span>商品管理</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!--右边-->
+<div class='main'>
+  <div class="title">
+    <a href="#" class="pull-left t-ment"><i class="glyphicon glyphicon-align-justify"></i></a>
+    <a href="#" class='pull-right t-info'><i class="glyphicon glyphicon-log-out"></i></a>
+  </div>
+
+  <div class="main-comtent">
+    <div class="container-fluid">
+      <!--面包导航-->
+      <div class="ment">
+        <ol class="breadcrumb">
+          <li><a href="index.html">管理系统</a></li>
+          <li class="active">分类管理</li>
+          <li class="active">一级分类</li>
+        </ol>
+      </div>
+      <!--表格-->
+      <div class="main_table">
+        <button class="btn btn-default mb_20" id="addBtn">添加分类</button>
+        <table class="table table-bordered table-hover">
+          <thead>
+          <th width="20%">序号</th>
+          <th width="80%">一级分类名</th>
+          </thead>
+          <tbody class="main-tbody">
+          <!--坑-->
+          </tbody>
+        </table>
+      </div>
+      <!--分页容器-->
+      <div class="pull-right">
+        <ul id="page-ul">
+          <li></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--表格模板-->
+<script type="text/template" id="ment-tb">
+{{each rows v i }}
+  <tr>
+    <td>{{(page-1)*size+(i+1)}}</td>
+    <td>{{v.categoryName}}</td>
+  </tr>
+{{/each}}
+</script>
+
+<!--引入jquery-->
+<script src="lib/jquery/jquery.min.js"></script>
+<!--引入boot的js-->
+<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+<!--引进度条插件-->
+<script src="lib/nprogress/nprogress.js"></script>
+<!--表单效验插件-->
+<script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
+<!--引入数据模型-->
+<script src="lib/artTemplate/template-web.js"></script>
+<!--引入分页-->
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<!--公共js-->
+<script src="js/comment.js"></script>
+<!--user的js-->
+<script src="js/first.js"></script>
 </body>
 </html>
