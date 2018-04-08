@@ -101,5 +101,5 @@ $(function(){
   //重置表单内容和图标
   $('[type=reset]').on('click',function(){
     $("#form").data("bootstrapValidator").resetForm(true);
-  })
+})
 })//入口函数

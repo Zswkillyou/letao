@@ -55,13 +55,14 @@ $(function(){
   //点击添加显示模态框
   $('#addBtn').click(function(){
     //显示模态框
-    $('#modal').modal('show');
+    $('#modal2').modal('show');
   })
 
   //验证表单
   $("#form").bootstrapValidator({
 
     // 配置图标
+
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
       invalid: 'glyphicon glyphicon-remove',
@@ -95,7 +96,7 @@ $(function(){
       type:'post',
       url:'/category/addTopCategory',
       dataType:'json',
-      data:{categoryName:$('#form').serialize()},
+      data:$('#form').serialize(),
       success:function(info) {
         console.log(info);
         //关闭模态框
@@ -110,5 +111,11 @@ $(function(){
 
       }
     })
+  })
+
+
+  //点击显示退出模态框
+  $('.t-info').click(function(){
+    $('#modal').modal('show');
   })
 })//入口函数
