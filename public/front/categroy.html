@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--引入icon图标-->
+  <link rel="icon" href="favicon.ico">
+  <!--//引入muicss-->
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <!--引入字体-->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <!--公共的样式-->
+  <link rel="stylesheet" href="css/comment.css">
+  <link rel="stylesheet" href="css/categroy.css">
+  <title>乐淘商城</title>
+</head>
+<body>
+<!--整体布局分  上  中 下 上部分-->
+
+<!--主容器-->
+<div class="le_container">
+  <!--头部-->
+  <div class="le_header">
+    <a class="head-left" href="index.html">
+      <i class="fa fa-home"></i>
+    </a>
+    <a  class="head-right" href="search.html">
+      <i class="fa fa-search"></i>
+    </a>
+    <h4>乐淘乐购</h4>
+  </div>
+
+  <!--中间-->
+  <div class="le_min">
+    <div class="min-left">
+      <!--区域划动-->
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <ul >
+              <li >
+                <a class="current " href="#">运动馆</a>
+              </li>
+              <li>
+                <a href="#">运动馆</a>
+              </li>
+
+            </ul>
+        </div>
+      </div>
+    </div>
+    <div class="min-right">
+      <!--区域划动-->
+      <div class="mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <ul class="mui-clearfix">
+              <li>
+                <a href="#">
+                  <img src="images/brand1.png" alt="">
+                  <p>耐克</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/brand2.png" alt="">
+                  <p>耐克</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/brand3.png" alt="">
+                  <p>耐克</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/brand4.png" alt="">
+                  <p>耐克</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/brand1.png" alt="">
+                  <p>耐克</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/brand1.png" alt="">
+                  <p>耐克</p>
+                </a>
+              </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+
+      </div>
+
+
+
+  <!--底部-->
+  <div class="le_footer">
+    <a class="current" href="index.html">
+      <i class="fa fa-home"></i>
+      <p>首页</p>
+    </a>
+    <a href="category.html">
+      <i class="fa fa-bars"></i>
+      <p>分类页</p>
+    </a>
+    <a href="cart.html">
+      <i class="fa fa-shopping-cart"></i>
+      <p>购物车</p>
+    </a>
+    <a href="user.html">
+      <i class="fa fa-user"></i>
+      <p>会员中心</p>
+    </a>
+  </div>
+</div>
+
+<!--渲染 左边一级分类-->
+<script type="text/html" id="cate-left">
+
+  {{each rows v i }}
+
+    <li>
+         <a class="{{ i === 0 ? 'current': ''}}" data-id={{v.id}} class="current " href="#">{{v.categoryName}}</a>
+    </li>
+  {{/each}}
+</script>
+
+<!--渲染 右边二级分类-->
+<script type="text/html" id="cate-right">
+  {{ if rows.length === 0}}
+  <p>没有更多的内容</p>
+  {{/if}}
+
+  {{each rows v i }}
+  <li>
+    <a href="#">
+      <img src="{{v.brandLogo}}" alt="">
+      <p>{{v.brandName}}</p>
+    </a>
+  </li>
+  {{/each}}
+</script>
+
+
+<!--引入zepto-->
+<script src="lib/zepto/zepto.min.js"></script>
+<!--引入mui-->
+<script src="lib/mui/js/mui.min.js"></script>
+<!--模板引型-->
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/categroy.js"></script>
+<script src="js/comment.js"></script>
+</body>
+</html>

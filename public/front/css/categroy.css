@@ -1,0 +1,47 @@
+.min-left {
+  float: left;
+  width: 90px;
+  height: 100%;
+  /*background-color: gold;*/
+  position: relative;
+}
+
+.min-left li  a{
+  display: block;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  color: #666;
+  background-color: #E3E4E5;
+}
+.min-left li  a.current {
+  border-right: none;
+  background-color: #fff;
+}
+.min-right {
+  overflow: hidden;
+  height: 100%;
+  /*background: blue;*/
+  position: relative;
+}
+.min-right li {
+  width: 33.33%;
+  float: left;
+}
+.min-right li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.min-right li a  img {
+  width: 70px;
+  height: 50px;
+  margin: 0 auto;
+}
+.min-right li a  p {
+  text-align: center;
+  line-height: 20px;
+}
