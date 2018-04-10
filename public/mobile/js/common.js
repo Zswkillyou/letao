@@ -19,17 +19,17 @@ var tools = {
     search = decodeURI( search );
     // 去掉 ?  name=zs&age=18&desc=呵呵呵
     search = search.slice(1);
-    
+
     // 将 search 切割成一个数组
     var arr = search.split("&");
     var obj = {};
     // 遍历数组
     arr.forEach(function( v ) {
       var key = v.split("=")[0];
+
       var value = v.split("=")[1];
       obj[key] = value;
     });
-    
     return obj;
   },
   

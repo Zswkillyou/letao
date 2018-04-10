@@ -96,3 +96,63 @@ img {
   margin: 0;
   color: #ffffff;
 }
+
+/*搜索框*/
+.le_search {
+  padding: 10px;
+
+}
+.le_search  .lt_input {
+  height: 34px;
+  border: 1px solid #007AFF;
+  border-radius: 5px;
+  font-size: 12px;
+  padding-right: 54px;
+}
+.le_search  button {
+  height: 34px;
+  position: absolute;
+  right: 11px;
+  top: 10px;
+  border-radius: 0 5px 5px 0 ;
+}
+
+/*商品*/
+.product {
+  padding: 10px;
+}
+.product li {
+  float: left;
+  width: 48%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  margin-bottom: 4%;
+}
+.product li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.product li a img {
+  width:100%;
+}
+.product li:nth-child(odd) {
+  margin-right: 4%;
+}
+.product li a p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.product li a .pic {
+  color: red;
+  margin-right: 7px;
+}
+.product li a .picn {
+  text-decoration: line-through;
+}
+
+.pro_item {
+  padding: 10px;
+  border-top:1px solid #ccc;
+}

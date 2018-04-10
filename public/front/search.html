@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--引入icon图标-->
+  <link rel="icon" href="favicon.ico">
+  <!--//引入muicss-->
+  <link rel="stylesheet" href="lib/mui/css/mui.css">
+  <!--引入字体-->
+  <link rel="stylesheet" href="lib/fa/css/font-awesome.css">
+  <!--公共的样式-->
+  <link rel="stylesheet" href="css/comment.css">
+  <link rel="stylesheet" href="css/search.css">
+  <title>搜索页</title>
+</head>
+<body>
+<!--整体布局分  上  中 下 上部分-->
+
+<!--主容器-->
+<div class="le_container">
+  <!--头部-->
+  <div class="le_header">
+    <a class="head-left" href="javascript:history.go(-1)">
+      <i class="mui-icon mui-icon-back"></i>
+    </a>
+    <a  class="head-right" href="search.html">
+      <i class="fa fa-search"></i>
+    </a>
+    <h4>搜索中心</h4>
+  </div>
+
+  <!--中间-->
+  <div class="le_min">
+    <!-- 添加区域滚动的容器 -->
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <!--这里放置真实显示的DOM内容-->
+
+        <!--搜索框-->
+        <div class="le_search">
+          <input type="text" class="lt_input" placeholder="输入关键字">
+          <button class="mui-btn mui-btn-primary h-search">搜索</button>
+        </div>
+
+        <!--搜索记录-->
+        <div class="lt_content">
+          <div class="lt_histit">
+            <div class="histit mui-clearfix">
+              <span class="mui-pull-left">搜索历史</span>
+              <span class="mui-pull-right"><i class=" fa fa-trash"></i> 清空历史记录</span>
+            </div>
+          </div>
+
+          <!--搜索记录-->
+          <div class="hisc">
+            <ul class="mui-clearfix">
+              <li>
+                <a href="#" class="mui-pull-left">耐克</a>
+                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+              <li>
+                <a href="#" class="mui-pull-left">耐克</a>
+                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+              <li>
+                <a href="#" class="mui-pull-left">耐克</a>
+                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+              <li>
+                <a href="#" class="mui-pull-left">耐克</a>
+                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+              <li>
+                <a href="#" class="mui-pull-left">耐克</a>
+                <i class="btn_delete mui-pull-right mui-icon mui-icon-closeempty"></i>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!--底部-->
+  <div class="le_footer">
+    <a class="current" href="index.html">
+      <i class="fa fa-home"></i>
+      <p>首页</p>
+    </a>
+    <a href="categroy.html">
+      <i class="fa fa-bars"></i>
+      <p>分类页</p>
+    </a>
+    <a href="cart.html">
+      <i class="fa fa-shopping-cart"></i>
+      <p>购物车</p>
+    </a>
+    <a href="user.html">
+      <i class="fa fa-user"></i>
+      <p>会员中心</p>
+    </a>
+  </div>
+</div>
+
+<script type="text/html" id="hisp">
+
+{{if arr.length !=0}}
+<div class="lt_histit">
+  <div class="histit mui-clearfix">
+    <span class="mui-pull-left">搜索历史</span>
+    <span class="mui-pull-right qing " ><i class="fa fa-trash"></i> 清空历史记录</span>
+  </div>
+</div>
+
+<!--搜索记录-->
+<div class="hisc">
+  <ul class="mui-clearfix">
+    {{each arr v i }}
+    <li>
+      <a href="searchlist.html?key={{v}}" class="mui-pull-left">{{v}}</a>
+      <i data-index="{{i}}"  class="btn_delete  mui-pull-right mui-icon mui-icon-closeempty"></i>
+    </li>
+    {{/each}}
+  </ul>
+</div>
+{{else }}
+  <p>没有更多的数据</p>
+ {{/if}}
+</script>
+
+<!--引入zepto-->
+<script src="lib/zepto/zepto.min.js"></script>
+<!--引入mui-->
+<script src="lib/mui/js/mui.min.js"></script>
+<!--模板引型-->
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/search.js"></script>
+<script src="js/comment.js"></script>
+</body>
+</html>

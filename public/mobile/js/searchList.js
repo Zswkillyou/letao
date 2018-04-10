@@ -6,6 +6,7 @@ $(function() {
   
   // 1. 获取地址栏参数, 设置到文本框 search_input 中
   var key = tools.getSearch("key");
+  console.log(key);
   $(".search_input").val(key);
   
   

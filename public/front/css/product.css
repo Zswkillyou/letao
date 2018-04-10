@@ -1,0 +1,33 @@
+.pto_name strong{
+  color: #000;
+  font-size: 20px;
+}
+.pro_mone  .mo_l{
+  color: red;
+}
+.pro_mone  .mo_r{
+  text-decoration: line-through;
+  color: #666;
+}
+.pro_cm span {
+  height: 25px;
+  line-height: 25px;
+  padding: 0 3px;
+  border: 1px solid #666;
+  display: inline-block;
+  background-color: #F5F5F5;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.pro-np {
+  font-size: 12px;
+  color: #666;
+}
+.le_footer {
+  background-color: #fff;
+  border-top: 1px solid red;
+  padding: 10px 10px 0 10px;
+}
+.le_footer .fo_gou {
+  color: blue;
+}
